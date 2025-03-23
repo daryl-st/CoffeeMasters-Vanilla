@@ -30,17 +30,14 @@ const Router = {
         // we can also use the hidden attribute to implement the same routing
         switch(route) {
             case "/":
-                pageElement = document.createElement("h1");
-                pageElement.textContent = "Home";
+                pageElement = document.createElement("menu-page");
                 break;
             case "/order":
-                pageElement = document.createElement("h1");
-                pageElement.textContent = "Order";
+                pageElement = document.createElement("order-page");
                 break;
             default:
                 if (route.startsWith("/product-")) {
-                    pageElement = document.createElement("h1");
-                    pageElement.textContent = "Details";
+                    pageElement = document.createElement("details-page");
                     const paramID = route.substring(route.lastIndexOf("-") + 1);
                     pageElement.dataset.id = paramID;
                 }
